@@ -1,0 +1,4 @@
+- name: This play will test apache2 deployments
+  hosts: localhost
+  tasks:
+    - include: test-ubuntu-boxes.yml

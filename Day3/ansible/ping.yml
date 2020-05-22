@@ -1,0 +1,11 @@
+- name: This play will ping all docker container
+  hosts: all
+  tasks:
+    - name: docker ping
+      ping:
+
+    - name: command on docker
+      command: hostname -i
+      register: host_det
+
+    - debug: var=host_det.stdout_lines

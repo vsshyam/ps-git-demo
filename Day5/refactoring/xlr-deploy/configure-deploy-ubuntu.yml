@@ -1,0 +1,13 @@
+- name : This play will install, configure and deploy web page into tomcat
+  hosts: ubuntu
+  vars:
+    provisioner_tool: Docker
+    cfg_mgr_tool: Ansible
+  tasks:
+     - include: "install-apache2-ubuntu.yml"
+
+     - include: "configure-apache2-ubuntu.yml"
+
+     - include: common-tasks.yml
+
+     - include: "restart-apache2-ubuntu.yml"
